@@ -15,3 +15,8 @@ Server Pi:
 * Create a crontab (crontab -a) and paste this line: "@reboot /home/pi/statusPage/openPage.sh"
 * 
 Printer Pi:
+
+* Install OctoPrint OS on each pi that you intend to connect to a printer (https://octoprint.org/download/) Download a stable version
+* Follow this tutorial to install OctoPrint on a micro SD card: https://www.youtube.com/watch?v=mnN4HVmjafs (watch up to 3:51)
+  - This includes setting up WiFi information on the OS and region information (UK/France/U.S/etc)
+* 
