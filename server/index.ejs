@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- Arthur Wang & Andrew Wang 1/1/2021-->
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> <!--bootstrap link-->
+        <style>
+                body { padding-top:50px;text-align:center;background-color:#DCE2BD;color:black; }
+                iframe { object-fit:scale-down; }
+                h4 { color:black; }
+                a { color:#BDF7B7; }
+                h3 { color:black; }
+        </style>
+</head>
+<body class="container">
+        <header>
+
+        </header>
+
+        <main>
+                <div class="jumbotron">
+                        <h1>Printers Status Page</h1>
+                </div>
+                <% printerInfo.forEach(function(printer){ %>
+                        <div style='background-color:grey;color:white;padding:3px;width:65%;margin:auto;border-radius:5px;'>
+                                <% ipPrinter = printer.name.split(":")[0] %>
+                                <h3><%=printer.name%>: <%= printer.status %> </h3>
+                                <% if(printer.printJobStarted!=''){ %>
+                                        <h4> User <%= printer.job.user %> started <%= printer.job.file.name %> </h4>
+                                        <h4> at <%= printer.printJobStarted %> for <%= printer.estimatedPrintTime %> </h4>
+                                <% } %>
+                                <h4><a href="http://<%= ipPrinter %>/webcam/?action=stream" target="_blank" rel="noopener noreferrer">View Webcam</a></h4>
+                                <hr>
+                                <h4><a href="http://<%= ipPrinter %>/#control" target="_blank" rel="noopener noreferrer">Go to Control Page</a></h4>
+                        </div>
+                        <hr>
+                <% }); %>
+
+        </main>
+</body>
+</html>
