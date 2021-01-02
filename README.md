@@ -19,4 +19,4 @@ Printer Pi:
 * Install OctoPrint OS on each pi that you intend to connect to a printer (https://octoprint.org/download/) Download a stable version
 * Follow this tutorial to install OctoPrint on a micro SD card: https://www.youtube.com/watch?v=mnN4HVmjafs (watch up to 3:51)
   - This includes setting up WiFi information on the OS and region information (UK/France/U.S/etc)
-* 
+* Copy everything in the printer folder (config, findPrinterStatus.py) to "/home/pi/.octoprint/plugins" on the printer pi (make sure you update the server pi's ip in: /home/pi/.octoprint/plugins/config/configuration.json)
