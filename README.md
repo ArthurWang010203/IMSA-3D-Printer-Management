@@ -8,5 +8,7 @@ Server Pi:
 * Connect Server Pi to WiFi network
 * Install Node.js (tutorial: https://blog.xuan-nguyen.vn/install-node-js-and-npm-on-raspberry-pi/)
 * Install Node'js packages: express, body-parser, ejs (e.g. npm install express/body-parser/ejs [run in the folder /home/pi/statusPage])
-
+* Copy both files in server folder (index.ejs and index.js) to /home/pi/statusPage
+* Create a crontab (crontab -a) and paste this line: "@reboot /home/pi/statusPage/openPage.sh"
+* 
 Printer Pi:
