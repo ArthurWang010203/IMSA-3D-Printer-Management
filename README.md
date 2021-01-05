@@ -14,18 +14,39 @@ Server Pi:
 * Connect Server Pi to WiFi network (Can be done with a monitor, keyboard, and mouse)
 * On the Pi's Desktop, select the upper left button->Preferences->Raspberry Pi Configuration->Interfaces
   - Find the "SSH" option and set it to enabled
-* Install Node.js (tutorial: https://blog.xuan-nguyen.vn/install-node-js-and-npm-on-raspberry-pi/)
+* Install Node.js (Follow instructions below)
   - Use CygWin64 on Windows or terminal with Mac/Linux
   - run "ssh pi@ip_address"
   - Enter Server Pi Password
-  - sudo apt-get update
-  - sudo apt-get dist-upgrade
-  - curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-  - sudo apt-get install -y nodejs
-* Install Node'js packages: express, body-parser, ejs (e.g. npm install express/body-parser/ejs [run in the folder /home/pi/statusPage])
+* Run the following commands in the home directory of the pi ("cd ~/")
+  - curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
+  - sudo apt-get install nodejs
+  - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  - sudo apt-get update && sudo apt-get install yarn
+* Run "npm -v" to check if npm is installed (the version of npm will appear)
+* Make a folder on the home directory called "statusPage" ("mkdir statusPage") and enter it ("cd ~/statusPage")
+* Run "npm init" and set the main file to "index.js"
+  - Continue until it says "Is this OK? (yes)" (You can also add a description)
+  - The preview for what is about to write should say "main":"index.js"
+* Run the following commands for the Node.js packages: 
+  - npm install express
+  - npm install body-parser
+  - npm install ejs
+* Go to the home directory ("cd ~/") and run "node" to check that it is working
+  - If you get an error (i.e. /usr/local/bin/node: No such file or directory), run the following commands
+    - sudo apt full-upgrade -y
+    - curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
+    - sudo apt-get install -y nodejs
+    - sudo ln -s /usr/bin/nodejs /usr/local/bin/node
 * Copy all files in server folder (index.ejs, index.js, openPage.sh) to /home/pi/statusPage
-* Create a crontab (crontab -a) and paste this line: "@reboot /home/pi/statusPage/openPage.sh"
-* 
+  - Download the files to a computer, (Cygwin if Windows, terminal if Mac/Linux) cd to the directory they are stored in (i.e. "cd C:/Users/"), and run the following
+  - scp index.ejs pi@ip_address:/home/pi/statusPage/
+  - scp index.js pi@ip_address:/home/pi/statusPage/
+  - scp openPage.sh pi@ip_address:/home/pi/statusPage/
+* Create a crontab (crontab -e, then pick an editor (/bin/nano)) and paste this line: "@reboot /home/pi/statusPage/openPage.sh"
+  - Ctrl+O and Enter to save, Ctrl+X to exit
+* Run "sudo reboot"
 Printer Pi:
 
 * Install OctoPrint OS on each pi that you intend to connect to a printer (https://octoprint.org/download/) Download a stable version
