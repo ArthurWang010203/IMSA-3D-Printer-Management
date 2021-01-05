@@ -12,7 +12,12 @@ Server Pi:
   - Using an HDMI cable and adapter to project the pi to a monitor, boot it up and select Raspbian/Raspberry Pi Operating System
   - Set up WiFi
 * Connect Server Pi to WiFi network (Can be done with a monitor, keyboard, and mouse)
+* On the Pi's Desktop, select the upper left button->Preferences->Raspberry Pi Configuration->Interfaces
+  - Find the "SSH" option and set it to enabled
 * Install Node.js (tutorial: https://blog.xuan-nguyen.vn/install-node-js-and-npm-on-raspberry-pi/)
+  - Use CygWin64 on Windows or terminal with Mac/Linux
+  - run "ssh pi@ip_address"
+  - Enter Server Pi Password
 * Install Node'js packages: express, body-parser, ejs (e.g. npm install express/body-parser/ejs [run in the folder /home/pi/statusPage])
 * Copy all files in server folder (index.ejs, index.js, openPage.sh) to /home/pi/statusPage
 * Create a crontab (crontab -a) and paste this line: "@reboot /home/pi/statusPage/openPage.sh"
