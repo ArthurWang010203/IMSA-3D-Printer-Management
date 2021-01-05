@@ -18,6 +18,10 @@ Server Pi:
   - Use CygWin64 on Windows or terminal with Mac/Linux
   - run "ssh pi@ip_address"
   - Enter Server Pi Password
+  - sudo apt-get update
+  - sudo apt-get dist-upgrade
+  - curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+  - sudo apt-get install -y nodejs
 * Install Node'js packages: express, body-parser, ejs (e.g. npm install express/body-parser/ejs [run in the folder /home/pi/statusPage])
 * Copy all files in server folder (index.ejs, index.js, openPage.sh) to /home/pi/statusPage
 * Create a crontab (crontab -a) and paste this line: "@reboot /home/pi/statusPage/openPage.sh"
