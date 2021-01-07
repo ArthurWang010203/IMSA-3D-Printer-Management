@@ -49,7 +49,7 @@ class GetStatus(octoprint.plugin.EventHandlerPlugin, octoprint.plugin.SettingsPl
                         #connectionInfo = os.system("ip -o -4 addr show wlan0 | awk '{ split($4, ip_addr, "/"); print ip_addr[1] }'") #str(os.system('hostname -I')).split(" ")
                         for line in Lines:
                                 tempLine = line.split(':') #the line we want in _data.profile starts with 'model': printer_name
-                                if(tempLine[0]=='model'):
+                                if(tempLine[0]=='name'):
                                         printerName = tempLine[1][1:] #remove space in front of printer_name
                         if g_ip=="":
                                 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
