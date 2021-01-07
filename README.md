@@ -69,3 +69,5 @@ Printer Pi:
     - You will see this line: "{ "server_url":"http://10.0.0.114:3000", "comments":"replace 10.0.0.114 with the ip of your server pi (you should only have 1 server pi)" }"
     - Change the "10.0.0.114" to the ip of your server Pi, then save (Ctrl+O) and exit (Ctrl+X)
 * Head to the printer pi's ip and set up OctoPrint accounts
+  - When setting up the accounts, you will be able to provide each printer's name and model
+  - Whatever is entered into the name field will appear on the server webpage, so if you have multiple printers, you should probably name them differently
