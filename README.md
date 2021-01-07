@@ -50,7 +50,22 @@ Server Pi:
 Printer Pi:
 
 * Install OctoPrint OS on each pi that you intend to connect to a printer (https://octoprint.org/download/) Download a stable version
-* Follow this tutorial to install OctoPrint on a micro SD card: https://www.youtube.com/watch?v=mnN4HVmjafs (watch up to 3:51)
-  - This includes setting up WiFi information on the OS and region information (UK/France/U.S/etc)
+* Follow this tutorial to install OctoPrint on a micro SD card: https://www.youtube.com/watch?v=xzY2lkOR29c (watch from 2:45 to 6:40)
+  - In my experience using Balena Etcher to write the image file, Etcher will say "Flash failed" or something like that, but it doesn't appear to cause any noticeable problems, so just ignore it
+  - Also make sure to set up WiFi information on the OS and region information (UK/France/U.S/etc)
     - Set up the WiFi network on the same network as the Server Pi
-* Copy everything in the printer folder (config, findPrinterStatus.py) to "/home/pi/.octoprint/plugins" on the printer pi (make sure you update the server pi's ip in: /home/pi/.octoprint/plugins/config/configuration.json)
+* Copy everything in the printer folder (config, findPrinterStatus.py) to "/home/pi/.octoprint/plugins" on the printer pi
+  - This can be done using ssh (CygWin for Windows, Terminal for Mac/Linux):
+    - "ssh pi@ip_address" (unlike with the server pi, ssh is automatically enabled)
+    - Enter pi's password (default is "raspberry", you can change it by running command "passwd")
+    - "cd ~/.octoprint/plugins/"
+    - "mkdir config"
+    - Open another CygWin/Terminal on a computer, download both findPrinterStatus.py and configuration.json (save both to desktop), and perform the next 3 lines on the computer:
+    - Run "cd C:/Users/user_name/Desktop/" (Enter "ls" to list files and check that you can see findPrinterStatus.py and configuration.json)
+    - "scp findPrinterStatus.py pi@ip_address:/home/pi/.octoprint/plugins/" (This copies the plugin file)
+    - "scp configuration.json pi@ip_address:/home/pi/.octoprint/plugins/config/" (This copies the configuration file into the config folder)
+    - Back on the CygWin/Terminal that is ssh'd to the printer pi, run the following:
+    - "nano ~/.octoprint/plugins/config/configuration.json"
+    - You will see this line: "{ "server_url":"http://10.0.0.114:3000", "comments":"replace 10.0.0.114 with the ip of your server pi (you should only have 1 server pi)" }"
+    - Change the "10.0.0.114" to the ip of your server Pi, then save (Ctrl+O) and exit (Ctrl+X)
+* Head to the printer pi's ip and set up OctoPrint accounts
