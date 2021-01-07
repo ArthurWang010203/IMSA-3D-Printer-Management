@@ -5,9 +5,9 @@ There are two parts of this system: the server pi (only 1) and the printer pi's 
 
 Server Pi:
 
-* NOOBS (or any other Operating System like Raspbian) - NOOBS: https://www.raspberrypi.org/downloads/noobs/
+* NOOBS (Raspbian) - NOOBS: https://www.raspberrypi.org/downloads/noobs/
   - Download the zip for the NOOBS 3.5.0 OS (not NOOBS Lite) from the link above
-  - Format a micro SD card ( at least 16GB) with FAT32 and empty memory
+  - Format a micro SD card (at least 16GB) with FAT32 and empty memory
   - Extract NOOBS's zipped folder to a micro SD card (tutorial: https://thepi.io/how-to-install-noobs-on-the-raspberry-pi/)
   - Using an HDMI cable and adapter to project the pi to a monitor, boot it up and select Raspbian/Raspberry Pi Operating System
   - Set up WiFi
@@ -15,15 +15,15 @@ Server Pi:
 * On the Pi's Desktop, select the upper left button->Preferences->Raspberry Pi Configuration->Interfaces
   - Find the "SSH" option and set it to enabled
 * Install Node.js (Follow instructions below)
-  - Use CygWin64 on Windows or terminal with Mac/Linux
+  - Use CygWin64 on Windows (https://www.cygwin.com/) or terminal with Mac/Linux
   - run "ssh pi@ip_address"
   - Enter Server Pi Password
 * Run the following commands in the home directory of the pi ("cd ~/")
-  - curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
-  - sudo apt-get install nodejs
-  - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-  - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-  - sudo apt-get update && sudo apt-get install yarn
+  - "curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -"
+  - "sudo apt-get install nodejs"
+  - "curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -"
+  - "echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list"
+  - "sudo apt-get update && sudo apt-get install yarn"
 * Run "npm -v" to check if npm is installed (the version of npm will appear)
 * Make a folder on the home directory called "statusPage" ("mkdir statusPage") and enter it ("cd ~/statusPage")
 * Run "npm init" and set the main file to "index.js"
@@ -34,19 +34,20 @@ Server Pi:
   - npm install body-parser
   - npm install ejs
 * Go to the home directory ("cd ~/") and run "node" to check that it is working
-  - If you get an error (i.e. /usr/local/bin/node: No such file or directory), run the following commands
-    - sudo apt full-upgrade -y
-    - curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
-    - sudo apt-get install -y nodejs
-    - sudo ln -s /usr/bin/nodejs /usr/local/bin/node
+  - If you get an error (i.e. "/usr/local/bin/node: No such file or directory"), run the following commands
+    - "sudo apt full-upgrade -y"
+    - "curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -"
+    - "sudo apt-get install -y nodejs"
+    - "sudo ln -s /usr/bin/nodejs /usr/local/bin/node"
 * Copy all files in server folder (index.ejs, index.js, openPage.sh) to /home/pi/statusPage
-  - Download the files to a computer, (Cygwin if Windows, terminal if Mac/Linux) cd to the directory they are stored in (i.e. "cd C:/Users/"), and run the following
-  - scp index.ejs pi@ip_address:/home/pi/statusPage/
-  - scp index.js pi@ip_address:/home/pi/statusPage/
-  - scp openPage.sh pi@ip_address:/home/pi/statusPage/
+  - Download the files to a computer, (Cygwin if Windows, terminal if Mac/Linux) cd to the directory they are stored in (i.e. "cd C:/Users/user_name/Desktop"), and run the following
+  - "scp index.ejs pi@ip_address:/home/pi/statusPage/"
+  - "scp index.js pi@ip_address:/home/pi/statusPage/"
+  - "scp openPage.sh pi@ip_address:/home/pi/statusPage/"
 * Create a crontab (crontab -e, then pick an editor (/bin/nano)) and paste this line: "@reboot /home/pi/statusPage/openPage.sh"
   - Ctrl+O and Enter to save, Ctrl+X to exit
 * Run "sudo reboot"
+
 Printer Pi:
 
 * Install OctoPrint OS on each pi that you intend to connect to a printer (https://octoprint.org/download/) Download a stable version
