@@ -7,8 +7,7 @@ var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: true });
 // mainDiction is dictionary of printers
 var mainDiction = {};
-// var mainDiction = {'10.0.0.141:MK3 Prusa':{'name':'10.0.0.141:MK3 Prusa', 'status':'Connected','printJobStarted':'1/1/2021','estimatedPrintTime':'','job':''},'10.0.0.115:Creality 3D Ender 3':{'name':'10.0.0.115:Creality 3D
- Ender 3','status':'Available','printJobStarted':'','estimatedPrintTime':'','job':''}}
+// var mainDiction = {'10.0.0.141:MK3 Prusa':{'name':'10.0.0.141:MK3 Prusa', 'status':'Connected','printJobStarted':'1/1/2021','estimatedPrintTime':'','job':''},'10.0.0.115:Creality 3D Ender 3':{'name':'10.0.0.115:Creality 3D Ender 3','status':'Available','printJobStarted':'','estimatedPrintTime':'','job':''}}
 
 app.use(bodyParser.json());
 
