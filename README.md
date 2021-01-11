@@ -67,7 +67,7 @@ Printer Pi:
     - "cd ~/.octoprint/plugins/"
     - "mkdir config"
     - Open another CygWin/Terminal on a computer, download both findPrinterStatus.py and configuration.json (save both to desktop), and perform the next 3 lines on the computer:
-    - Run "cd C:/Users/user_name/Desktop/" (Enter "ls" to list files and check that you can see findPrinterStatus.py and configuration.json)
+    - Run "cd C:/file_location/" (Enter "ls" to list files and check that you can see findPrinterStatus.py and configuration.json)
     - "scp findPrinterStatus.py pi@ip_address:/home/pi/.octoprint/plugins/" (This copies the plugin file)
     - "scp configuration.json pi@ip_address:/home/pi/.octoprint/plugins/config/" (This copies the configuration file into the config folder)
     - Back on the CygWin/Terminal that is ssh'd to the printer pi, run the following:
