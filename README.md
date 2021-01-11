@@ -9,6 +9,7 @@ Server Pi Setup (Assign this Raspberry Pi a reserved IP address):
   - Download the zip for the NOOBS 3.5.0 OS (not NOOBS Lite) from the link above
   - Format a micro SD card (at least 16GB) with FAT32 and empty memory (windows comes with methods to do this)
   - Extract NOOBS's zipped folder to a micro SD card (tutorial: https://thepi.io/how-to-install-noobs-on-the-raspberry-pi/) (this could take about 20-30 minutes)
+  - Eject the micro SD card from the computer after NOOBS has finished extracting and plug the micro SD card into the server pi
   - Using an HDMI cable and adapter to project the pi to a monitor, boot it up and select Raspbian/Raspberry Pi Operating System (this could also take about 20-30 minutes)
   - Set up WiFi
 * Connect Server Pi to WiFi network (Can be done with a monitor, keyboard, and mouse)
