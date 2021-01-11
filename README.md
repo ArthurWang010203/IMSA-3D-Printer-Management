@@ -3,7 +3,7 @@ Remote management and control of IMSA's 3D printers via OctoPrint and a webservi
 
 There are two parts of this system: the server pi (only 1) and the printer pi's (1 pi per printer)
 
-Server Pi:
+Server Pi Setup:
 
 * NOOBS (Raspbian) - NOOBS: https://www.raspberrypi.org/downloads/noobs/
   - Download the zip for the NOOBS 3.5.0 OS (not NOOBS Lite) from the link above
@@ -50,7 +50,7 @@ Server Pi:
 * Run "sudo reboot"
 * To check the webpage is up, type "server_pi_ip_address:3000" in the url bar (i.e. 10.0.0.114:3000)
 
-Printer Pi:
+Printer Pi Setup:
 
 * Install OctoPrint OS on each pi that you intend to connect to a printer (https://octoprint.org/download/) Download a stable version
 * Follow this tutorial to install OctoPrint on a micro SD card: https://www.youtube.com/watch?v=xzY2lkOR29c (watch from 2:45 to 6:40)
