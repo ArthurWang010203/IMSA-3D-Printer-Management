@@ -14,6 +14,7 @@ Server Pi Setup:
 * Connect Server Pi to WiFi network (Can be done with a monitor, keyboard, and mouse)
 * On the Pi's Desktop, select the upper left button->Preferences->Raspberry Pi Configuration->Interfaces
   - Find the "SSH" option and set it to enabled
+  - Turn the pi on and off to make sure the changes take effect 
 * Install Node.js (Follow instructions below)
   - Use CygWin64 on Windows (https://www.cygwin.com/) or terminal with Mac/Linux
   - run "ssh pi@ip_address"
