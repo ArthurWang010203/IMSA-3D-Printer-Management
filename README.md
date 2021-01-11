@@ -19,7 +19,7 @@ Server Pi Setup (Assign this Raspberry Pi a reserved IP address):
 * Install Node.js (Follow instructions below)
   - Use CygWin64 on Windows (https://www.cygwin.com/) or terminal with Mac/Linux
   - run "ssh pi@ip_address"
-  - Enter Server Pi Password
+  - Enter Server Pi Password (default is raspberry, change it by running "passwd")
 * Run the following commands in the home directory of the pi ("cd ~/")
   - "curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -"
   - "sudo apt-get install nodejs"
