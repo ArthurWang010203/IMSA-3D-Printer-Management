@@ -46,7 +46,7 @@ Server Pi Setup (Assign this Raspberry Pi a reserved IP address):
   - "scp index.ejs pi@ip_address:/home/pi/statusPage/"
   - "scp index.js pi@ip_address:/home/pi/statusPage/"
   - "scp openPage.sh pi@ip_address:/home/pi/statusPage/"
-  - On the pi, we have to make openPage.sh executable; run "chmod +x openPage.sh" in /home/pi/statusPage/
+  - Over on the CygWin window that is ssh'd to the pi, we have to make openPage.sh executable; run "chmod +x openPage.sh" in /home/pi/statusPage/
 * Create a crontab (crontab -e, then pick an editor (/bin/nano)) and paste this line: "@reboot /home/pi/statusPage/openPage.sh"
   - Ctrl+O and Enter to save, Ctrl+X to exit
 * Run "sudo reboot"
