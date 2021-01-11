@@ -35,7 +35,7 @@ Server Pi Setup (Assign this Raspberry Pi a reserved IP address):
   - npm install express (express is one of the packages that allows node to generate a webpage)
   - npm install body-parser (body-parser is a package which allows others to send and receive data from the webpage)
   - npm install ejs (ejs stands for embedded javascript allows for more complicated actions to be performed on the webpage)
-* Go to the home directory ("cd ~/") and run "node" to check that it is working
+* Go to the home directory ("cd ~/") and run "node" to check that it is working (press Ctrl+C twice to exit node)
   - If you get an error (i.e. "/usr/local/bin/node: No such file or directory"), run the following commands
     - "sudo apt full-upgrade -y"
     - "curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -"
