@@ -74,3 +74,4 @@ Printer Pi:
     - "nano ~/.octoprint/plugins/config/configuration.json"
     - You will see this line: "{ "server_url":"http://10.0.0.114:3000", "comments":"replace 10.0.0.114 with the ip of your server pi (you should only have 1 server pi)" }"
     - Change the "10.0.0.114" to the ip of your server Pi, then save (Ctrl+O) and exit (Ctrl+X)
+    - Reboot the printer pi for the changes to take effect
