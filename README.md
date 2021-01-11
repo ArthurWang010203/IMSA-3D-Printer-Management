@@ -42,7 +42,7 @@ Server Pi Setup (Assign this Raspberry Pi a reserved IP address):
     - "sudo apt-get install -y nodejs"
     - "sudo ln -s /usr/bin/nodejs /usr/local/bin/node"
 * To make the server pi generate a webpage on startup, we will move the server folder files (index.ejs, index.js, openPage.sh) to /home/pi/statusPage
-  - Download the files to a computer, (Cygwin if Windows, terminal if Mac/Linux) cd to the directory they are stored in (i.e. "cd C:/Users/user_name/Desktop"), and run the following (will require you to enter the server Pi's password)
+  - Download the files to a computer (open a new Cygwin), (Cygwin if Windows, terminal if Mac/Linux) cd to the directory they are stored in (i.e. "cd C:/Users/user_name/Desktop"), and run the following (will require you to enter the server Pi's password)
   - "scp index.ejs pi@ip_address:/home/pi/statusPage/"
   - "scp index.js pi@ip_address:/home/pi/statusPage/"
   - "scp openPage.sh pi@ip_address:/home/pi/statusPage/"
