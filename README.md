@@ -57,6 +57,9 @@ Printer Pi:
   - In my experience using Balena Etcher to write the image file, Etcher will say "Flash failed" or something like that, but it doesn't appear to cause any noticeable problems, so just ignore it
   - Also make sure to set up WiFi information on the OS and region information (UK/France/U.S/etc)
     - Set up the WiFi network on the same network as the Server Pi
+* Head to the printer pi's ip and set up OctoPrint accounts
+  - When setting up the accounts, you will be able to provide each printer's name and model
+  - Whatever is entered into the name field will appear on the server webpage, so if you have multiple printers, you should probably name them differently
 * Copy everything in the printer folder (config, findPrinterStatus.py) to "/home/pi/.octoprint/plugins" on the printer pi
   - This can be done using ssh (CygWin for Windows, Terminal for Mac/Linux):
     - "ssh pi@ip_address" (unlike with the server pi, ssh is automatically enabled)
@@ -71,6 +74,3 @@ Printer Pi:
     - "nano ~/.octoprint/plugins/config/configuration.json"
     - You will see this line: "{ "server_url":"http://10.0.0.114:3000", "comments":"replace 10.0.0.114 with the ip of your server pi (you should only have 1 server pi)" }"
     - Change the "10.0.0.114" to the ip of your server Pi, then save (Ctrl+O) and exit (Ctrl+X)
-* Head to the printer pi's ip and set up OctoPrint accounts
-  - When setting up the accounts, you will be able to provide each printer's name and model
-  - Whatever is entered into the name field will appear on the server webpage, so if you have multiple printers, you should probably name them differently
