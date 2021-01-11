@@ -28,9 +28,9 @@ Server Pi Setup (Assign this Raspberry Pi a reserved IP address):
   - "sudo apt-get update && sudo apt-get install yarn"
 * Run "npm -v" to check if npm is installed (the version of npm will appear)
 * Make a folder on the home directory called "statusPage" ("mkdir statusPage") and enter it ("cd ~/statusPage")
-* Run "npm init" and set the main file to "index.js"
-  - Continue until it says "Is this OK? (yes)" (You can also add a description)
-  - The preview for what is about to write should say "main":"index.js"
+* Run "npm init"
+  - Press Enter until it says "Is this OK? (yes)" (You can also add a description)
+  - The preview for what it is about to write should say "main":"index.js"
 * Run the following commands for the Node.js packages: 
   - npm install express
   - npm install body-parser
