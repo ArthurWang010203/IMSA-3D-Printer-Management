@@ -51,6 +51,7 @@ Server Pi Setup (Assign this Raspberry Pi a reserved IP address):
   - Ctrl+O and Enter to save, Ctrl+X to exit
 * Run "sudo reboot"
 * To check the webpage is up, type "server_pi_ip_address:3000" in the url bar (i.e. 10.0.0.114:3000) (it can take a bit (~1min) for the pi to fully start up)
+* The webpage should currently look like the picture "printerBlankPage"
 
 Printer Pi Setup:
 
