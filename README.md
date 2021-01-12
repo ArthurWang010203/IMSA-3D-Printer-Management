@@ -55,7 +55,7 @@ Server Pi Setup (Assign this Raspberry Pi a reserved IP address):
 
 Printer Pi Setup:
 
-* Format another micro SD card (at least 16GB)
+* Format another micro SD card with the same settings as the server pi (at least 16GB)
 * Install OctoPrint OS on each pi that you intend to connect to a printer (https://octoprint.org/download/) Download a stable version
 * Follow this tutorial to install OctoPrint on a micro SD card: https://www.youtube.com/watch?v=xzY2lkOR29c (watch from 2:45 to 6:40)
   - In my experience using Balena Etcher to write the image file, Etcher will say "Flash failed" or something like that, but it doesn't appear to cause any noticeable problems, so just ignore it
