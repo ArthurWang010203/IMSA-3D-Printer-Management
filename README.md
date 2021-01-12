@@ -2,6 +2,7 @@
 Remote management and control of IMSA's 3D printers via OctoPrint and a webservice
 
 There are two parts of this system: the server pi (only 1) and the printer pi's (1 pi per printer)
+ **Assign each pi (both server and printer(s) a reserved ip address)
 
 Server Pi Setup (Assign this Raspberry Pi a reserved IP address):
 
