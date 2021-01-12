@@ -59,7 +59,7 @@ Printer Pi Setup:
 * Install OctoPrint OS on each pi that you intend to connect to a printer (https://octoprint.org/download/) Download a stable version
 * Make sure you follow this tutorial to install OctoPrint on a micro SD card: https://www.youtube.com/watch?v=xzY2lkOR29c (watch from 2:45 to 6:40)
   - In my experience using Balena Etcher to write the image file, Etcher will say "Flash failed" or something like that, but it doesn't appear to cause any noticeable problems, so just ignore it
-  - Also make sure to set up WiFi information on the OS and region information (UK/France/U.S/etc)
+  - Also make sure to set up WiFi information on the OS and region information (UK/France/U.S/etc) using "octopi-wpa-supplicant.txt"
     - Set up the WiFi network on the same network as the Server Pi
 * Head to the printer pi's ip and set up OctoPrint accounts
   - When setting up the accounts, you will be able to provide each printer's name and model
