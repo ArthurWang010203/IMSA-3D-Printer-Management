@@ -6,18 +6,20 @@ There are two parts of this system: the server pi (only 1) and the printer pi's 
 
 Server Pi Setup (Assign this Raspberry Pi a reserved IP address):
 
-* NOOBS (Raspbian) - NOOBS: https://www.raspberrypi.org/downloads/noobs/
-  - Download the zip for the NOOBS 3.5.0 OS (not NOOBS Lite) from the link above
-  - Format a micro SD card (at least 16GB) with FAT32 and empty memory (windows comes with methods to do this)
-  - Extract NOOBS's zipped folder to a micro SD card (tutorial: https://thepi.io/how-to-install-noobs-on-the-raspberry-pi/) (this could take about 20-30 minutes)
-  - Eject the micro SD card from the computer after NOOBS has finished extracting and plug the micro SD card into the server pi
-  - Using an HDMI cable and adapter to project the pi to a monitor, boot it up, select Raspbian/Raspberry Pi Operating System, and install it (this could also take about 20-30 minutes)
-  - Set up WiFi
-* Connect Server Pi to WiFi network (Can be done with a monitor, keyboard, and mouse)
+* Raspberry Pi Imager (Raspbian): https://www.raspberrypi.org/software/
+  - Download the Raspberry Pi Imager
+  - Plug the SD card into the computer
+  - Run the imager_[version number].exe
+  - Run the imager once installed
+  - Select "Raspberry Pi OS (32-BIT)" for the Operating System
+  - Select your SD card for the storage (will display "Mass Storage Device" or something similar)
+  - Select "Write" (it will clear the memory of the SD card)
+  - Eject the micro SD card from the computer after Raspbian has finished installing and plug the micro SD card into the server pi
+  - Using an HDMI cable and adapter to project the pi to a monitor, boot it up, configure settings, connect to WiFi and update it (this could also take about 20-30 minutes)
 * On the Pi's Desktop, select the upper left button->Preferences->Raspberry Pi Configuration->Interfaces
   - Find the "SSH" option and set it to enabled
   - Turn the pi on and off to make sure the changes take effect 
-* Install Node.js (Follow instructions below)
+* Install Node.js (Follow instructions below) 
   - Use CygWin64 on Windows (https://www.cygwin.com/) or terminal with Mac/Linux
   - run "ssh pi@ip_address"
   - Enter Server Pi Password (default is raspberry, change it by running "passwd")
@@ -48,7 +50,7 @@ Server Pi Setup (Assign this Raspberry Pi a reserved IP address):
   - "scp index.ejs pi@ip_address:/home/pi/statusPage/"
   - "scp index.js pi@ip_address:/home/pi/statusPage/"
   - "scp openPage.sh pi@ip_address:/home/pi/statusPage/"
-  - Over on the CygWin window that is ssh'd to the pi, we have to make openPage.sh executable; run "chmod +x openPage.sh" in /home/pi/statusPage/
+  - Over on the CygWin window that is ssh'd to the pi, we have to make openPage.sh (cd ~/statusPage/) executable; run "chmod +x openPage.sh" in /home/pi/statusPage/
 * Create a crontab on the pi (crontab -e, then pick an editor (/bin/nano)) and paste this line: "@reboot /home/pi/statusPage/openPage.sh"
   - Ctrl+O and Enter to save, Ctrl+X to exit
 * Run "sudo reboot"
