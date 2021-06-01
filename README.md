@@ -63,7 +63,7 @@ Printer Pi Setup:
 * Install OctoPrint OS on each pi that you intend to connect to a printer (https://octoprint.org/download/) Download a stable version
 * Make sure you follow this tutorial to install OctoPrint on a micro SD card: https://www.youtube.com/watch?v=xzY2lkOR29c (watch from 2:45 to 6:40)
   - In my experience using Balena Etcher to write the image file, Etcher will say "Flash failed" or something like that, but it doesn't appear to cause any noticeable problems, so just ignore it
-  - Also make sure to set up WiFi information on the OS and region information (UK/France/U.S/etc) using "octopi-wpa-supplicant.txt"
+  - Also make sure to set up WiFi information on the OS and region information (UK/France/U.S/etc) using "octopi-wpa-supplicant.txt" (notepad itself can't be used, something like notepad++ has to be used to edit the file)
     - Set up the WiFi network on the same network as the Server Pi
 * Eject the micro SD card and plug it into the printer pi
   - Head to the printer pi's ip and set up OctoPrint accounts
@@ -78,9 +78,10 @@ Printer Pi Setup:
     - Open another CygWin/Terminal on a computer, download both findPrinterStatus.py and configuration.json (save both to desktop), and perform the next 3 lines on the computer:
     - Run "cd C:/file_location/" (Enter "ls" to list files and check that you can see findPrinterStatus.py and configuration.json)
     - "scp findPrinterStatus.py pi@ip_address:/home/pi/.octoprint/plugins/" (This copies the plugin file)
-    - "scp configuration.json pi@ip_address:/home/pi/.octoprint/plugins/config/" (This copies the configuration file into the config folder)
+    - (configuration.json is in the printer/config folder) "scp configuration.json pi@ip_address:/home/pi/.octoprint/plugins/config/" (This copies the configuration file into the config folder)
     - Back on the CygWin/Terminal that is ssh'd to the printer pi, run the following:
     - "nano ~/.octoprint/plugins/config/configuration.json"
     - You will see this line: "{ "server_url":"http://10.0.0.114:3000", "comments":"replace 10.0.0.114 with the ip of your server pi (you should only have 1 server pi)" }"
     - Change the "10.0.0.114" to the ip of your server Pi, then save (Ctrl+O) and exit (Ctrl+X)
     - Reboot the printer pi for the changes to take effect
+The system should be up and running. Power up the server pi and printer pi (print pi should be connected to the printer) and go to server_pi_ip_address:3000 and update the printer's status by starting a print and refreshing the server_pi_ip_address:3000 page.
