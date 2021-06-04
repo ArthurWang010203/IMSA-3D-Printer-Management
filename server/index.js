@@ -30,6 +30,14 @@ app.get('/', function(req, res) {
         });
 });
 
+//trying lights
+//button trigger
+//python script (import paramiko, import scp)
+//copy python script to printer pi
+//stdin, stdout, stderr = con.exec_command('bash /tmp/test.sh') //run gpio toggle (https://instructobit.com/tutorial/116/Remotely-running-commands-or-scripts-with-python)
+//toggle/on for set duration
+//end lights
+
 app.post('/', (request, response) => {
         console.log(request.body);
 
