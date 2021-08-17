@@ -72,7 +72,7 @@ class GetStatus(octoprint.plugin.EventHandlerPlugin, octoprint.plugin.SettingsPl
                                 timeSeconds = int((printTimeLine.split(":"))[1]) ### PRINT TIME IN SECONDS ###
                                 printTimeSeconds = datetime.timedelta(seconds=timeSeconds)
                                 jsonSend['estimatedPrintTime'] = str(printTimeSeconds)
-                                jsonSend['estimatedEndTime'] = str(startTime + printTimeSeconds)
+                                jsonSend['estimatedEndTime'] = (startTime + printTimeSeconds).strftime("%H:%M:%S %m/%d/%Y, ") ### END TIME BASED ON ESTIMATED PRINT TIME ###
                         else:
                                 jsonSend['printJobStarted'] = ""
                                 jsonSend['estimatedPrintTime'] = ""
