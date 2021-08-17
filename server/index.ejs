@@ -27,6 +27,7 @@
                                 <% if(printer.printJobStarted!=''){ %>
                                         <h4> User <%= printer.job.user %> started <%= printer.job.file.name %> </h4>
                                         <h4> at <%= printer.printJobStarted %> for <%= printer.estimatedPrintTime %> </h4>
+                                        <h4> until <%=  printer.estimatedEndTime %> </h4>
                                 <% } %>
                                 <h4><a href="http://<%= ipPrinter %>/webcam/?action=stream" target="_blank" rel="noopener noreferrer">View Webcam</a></h4> 
                                 <hr>
