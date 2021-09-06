@@ -61,8 +61,8 @@ Printer Pi Setup:
 
 * Format another micro SD card with the same settings as the server pi (at least 16GB)
 * Install OctoPrint OS on each pi that you intend to connect to a printer (https://octoprint.org/download/) Download a stable version
-* Make sure you follow this tutorial to install OctoPrint on a micro SD card: https://www.youtube.com/watch?v=xzY2lkOR29c (watch from 2:45 to 6:40)
-  - In my experience using Balena Etcher to write the image file, Etcher will say "Flash failed" or something like that, but it doesn't appear to cause any noticeable problems, so just ignore it
+* You can now use Raspberry Pi Imager to write the image to a micro SD card
+  - Choose OS -> Other Specific Purpose OS -> OctoPi -> OctoPi
   - Also make sure to set up WiFi information on the OS and region information (UK/France/U.S/etc) using "octopi-wpa-supplicant.txt" (notepad itself can't be used, something like notepad++ has to be used to edit the file)
     - Set up the WiFi network on the same network as the Server Pi
 * Eject the micro SD card and plug it into the printer pi
