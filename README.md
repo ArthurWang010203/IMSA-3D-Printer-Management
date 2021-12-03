@@ -5,7 +5,7 @@ There are two parts of this system: the server pi (only 1) and the printer pi's 
 
  **Assign each pi (both server and printer(s) a reserved ip address)
  
- **For using a single pi, refer raspbian and octoprint installation to here: https://community.octoprint.org/t/setting-up-octoprint-on-a-raspberry-pi-running-raspbian-or-raspberry-pi-os/2337
+ **For using a single pi, refer raspbian and octoprint installation to here: https://community.octoprint.org/t/setting-up-octoprint-on-a-raspberry-pi-running-raspbian-or-raspberry-pi-os/2337 or the pdf SinglePi-Guide
 
 Server Pi Setup (Assign this Raspberry Pi a reserved IP address):
 
