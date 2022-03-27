@@ -15,8 +15,8 @@ import discord
 
 from discord.ext import commands
 
-TOKEN = 'OTQ1NDkwMjM4MjU0NDgxNTU5.YhQ6Zw.SWdNza_upXlX-oa0pRv-RvkY12c'
-GUILD = "Scenario #89"
+TOKEN = 'GUILD_TOKEN'
+GUILD = "GUILD_NAME"
 
 prefix = '!'
 bot = commands.Bot(command_prefix=prefix)
