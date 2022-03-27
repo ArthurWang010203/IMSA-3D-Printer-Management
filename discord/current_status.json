@@ -1,0 +1,24 @@
+{
+    "name": "172.16.112.157:Ender 3\n",
+    "status": "Available (Last Print Failed)",
+    "printJobStarted": "",
+    "estimatedPrintTime": "",
+    "job": {
+        "name": "CE3_Chungus.gcode",
+        "path": "CE3_Chungus.gcode",
+        "origin": "local",
+        "size": 5561992,
+        "position": {
+            "x": null,
+            "z": null,
+            "e": null,
+            "f": null,
+            "t": null,
+            "y": null
+        },
+        "owner": "jabbawithlegs",
+        "user": "jabbawithlegs",
+        "time": 22.364499758000008,
+        "reason": "cancelled"
+    }
+}
