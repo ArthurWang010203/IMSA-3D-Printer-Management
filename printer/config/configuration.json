@@ -1,0 +1,1 @@
+{ "server_url":"http://172.16.112.157:3000", "comments":"replace 10.0.0.114 with the ip of your server pi (you should only have 1 server pi)", "post_url" : "http://172.16.112.157:5000", "user" : "user_name", "pass" : "password", "api-key" : "octoprint_apy_key" }
