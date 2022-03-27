@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!-- Arthur Wang & Andrew Wang 1/1/2021-->
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> <!--bootstrap link-->
+        <style>
+                body { padding-top:50px;text-align:center;background-color:#FF69B4;color:#B1E5F2; }
+                iframe { object-fit:scale-down; }
+                h4 { color:#272635; }
+                a { color:#F4AC45; }
+                h3 { color:#272635; }
+        </style>
+	<meta http-equiv="refresh" content="5">
+</head>
+<body class="container">
+        <header>
+
+        </header>
+
+        <main>
+                <div class="jumbotron" style='background-color:#272635'>
+                        <h1 >Printers Status Page</h1>
+                </div>
+                <% printerInfo.forEach(function(printer){ %>
+                        <div style='background-color:#B1E5F2;color:white;padding:3px;width:65%;margin:auto;border-radius:5px;'>
+                                <% ipPrinter = printer.name.split(":")[0] %>
+                                <h3><%=printer.name%>: <%= printer.status %> </h3>
+                                <% if(printer.printJobStarted!=''){ %>
+                                        <h4> User <%= printer.job.user %> started <%= printer.job.name %> </h4>
+                                        <h4> at <%= printer.printJobStarted %> for <%= printer.estimatedPrintTime %> </h4>
+                                        <h4> until <%=  printer.estimatedEndTime %> </h4>
+                                <% } %>
+                                <h4><a href="http://<%= ipPrinter %>:8081" target="_blank" rel="noopener noreferrer">View Webcam</a></h4> 
+                                <hr>
+                                <h4><a href="http://<%= ipPrinter %>:5000" target="_blank" rel="noopener noreferrer">Go to Control Page</a></h4>
+                        </div>
+                        <hr>
+                <% }); %>
+
+        </main>
+</body>
+</html>
