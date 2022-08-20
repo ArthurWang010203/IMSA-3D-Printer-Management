@@ -158,5 +158,60 @@ async def get_status(ctx):
 #async def print(ctx, arg):
     #print(str(arg))
     #await ctx.send("Got it")
+@bot.command(name='files',help='Lists all available files [usage:!files]')
+async def get_files(ctx):
+    file_path = "/home/pi/.octoprint/uploads"
+    dir_list = os.listdir(file_path)
+    str_to_print = "Available Files:"
+    for file_name in dir_list:
+        if "gcode" not in str(file_name):
+            continue
+        str_to_print += "\n" + str(file_name)
+    await ctx.send(str_to_print)
+#@commands.has_any_role("Incarnation","Outer God")
+@bot.command(name='delete',help='Deletes the given file name [usage:!delete "file_name"]')
+async def delete_file(ctx,arg):
+    file_name = str(arg)
+    file_path = "/home/pi/.octoprint/uploads/"
+    if(file_name == '' or file_name == "/"):
+        await ctx.send("No file specified to delete.")
+        return
+    try:
+        os.remove(file_path + file_name)
+        await ctx.send(file_name + " removed successfully.")
+        return
+    except OSError as error:
+        print(error)
+        await ctx.send(file_name + " cannot be removed.")
+@bot.command(name='stopFeed',help='Stops the Webcam feed')
+async def stop_feed(ctx):
+    #await ctx.send("Stopping Webcam Feed")
+    os.system("/home/pi/Webcam/stopFeed.sh")
+    await ctx.send("Stopping Webcam Feed")
+@bot.command(name='startFeed',help='Starts the Webcam feed')
+async def start_feed(ctx):
+    os.system("/home/pi/Webcam/startFeed.sh")
+    await ctx.send("Starting Webcam Feed")
+@bot.command(name='picture',help='Orders the webcam to take a screenshot and send it to the Discord Server [usage:!picture]')
+async def take_picture(ctx):
+    await ctx.send("Playing Advertisement...")
+    #execfile("/home/pi/Webcam/test_ss.py")
+    #sleep(7)
+    os.system("/home/pi/Webcam/stopFeed.sh")
+    await ctx.send("Stream Paused")
+    os.system("/home/pi/Webcam/screenshot.sh")
+    await ctx.send("State Captured")
+    #sleep(5)
+    os.system("/home/pi/Webcam/startFeed.sh")
+    await ctx.send("Stream Resumed.")
+    await ctx.send(file=discord.File('/home/pi/DiscordBot/ss.jpg'))
+@bot.command(name='email', help='Selects the email to notify')
+async def print(ctx, arg):
+    #print(str(arg))
+    email = str(arg)
+    file_path = '/home/pi/.octoprint/plugins/config/email_adr.txt'
+    infile = open(file_path,"w")
+    infile.write(email)
+    await ctx.send(arg, " Email selected for notification!")
 
 bot.run(TOKEN)
